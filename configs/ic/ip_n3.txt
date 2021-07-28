@@ -1,0 +1,10 @@
+[dda-config]
+cyclegan = ic_ip_n3G2-ngf64ndf64-netDb-netG2-initn0.02-epoch100-batch8-lrpl-lr0.0002b0.5-ganl-lA10.0lB10.0li0.5-lD0.01-n3-dc_5000_5000-r999999-nolr
+exp_name = ci_n3
+t_name = P
+s_name = I
+dataset_name = ic
+num_classes = 12
+t_set = data/ic-server/p.txt
+s_set = data/ic-server/i.txt
+cdm = python generate_cdm.py --gpu_ids 0,1,2,3 --a_root /data2/yuezhongqi/Dataset/da/imageclef_m/i --b_root /data2/yuezhongqi/Dataset/da/imageclef_m/p --batch_size 8 --n_experts 3 --name ic_ip_n3G2 --lr 0.0002 --s_dset data/ic-server/i.txt --s_name I --t_dset data/ic-server/p.txt --t_name P --dataset_name ic --netG resnet_2blocks --cdm_path /data2/yuezhongqi/Model/dda/cdm --checkpoints_dir /data2/yuezhongqi/Model/dda/cyclegan --n_epochs 100 --n_epochs_decay 100 --expert_criteria dc --expert_warmup_mode random --expert_warmup_iterations 999999 --lr_trick 0 --lambda_diversity 0.01

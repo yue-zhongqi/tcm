@@ -1,0 +1,10 @@
+[dda-config]
+cyclegan = ohac-ngf64ndf64-netDb-netG2-initn0.02-epoch100-batch4-lrpl-lr0.0002b0.5-ganl-lA10.0lB10.0li0.5-n1
+exp_name = ohac
+s_name = A
+t_name = C
+dataset_name = oh
+num_classes = 65
+s_set = data/office-home/Art.txt
+t_set = data/office-home/Clipart.txt
+cdm = python generate_cdm.py --gpu_ids 0,1,2,3 --a_root /data2/xxxxx/Dataset/da/officehome/OfficeHomeDataset_10072016/Art --b_root /data2/xxxx/Dataset/da/officehome/OfficeHomeDataset_10072016/Clipart --batch_size 4 --name ohac --lr 0.0002 --netG resnet_2blocks --s_dset data/office-home/Art.txt --s_name A --t_dset data/office-home/Clipart.txt --t_name C --dataset_name oh
